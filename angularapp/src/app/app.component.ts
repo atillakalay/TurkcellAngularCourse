@@ -13,11 +13,11 @@ export class AppComponent {
   names: string[] = ["Atilla", "Salih", "Veysel"]
   isUsers: boolean[] = [true, false, true]
   type: any = 5.65;
-type1:unknown[]=["Ahmet",5,true,new Date()]
+  type1: unknown[] = ["Ahmet", 5, true, new Date()]
 
 
-Method1(){
-  this.type.toFixed();
-}
+  Method1() {
+    this.type.toFixed();
+  }
 
 }
