@@ -7,8 +7,14 @@ import { Component } from '@angular/core';
 })
 export class EventClickComponent {
 
-  public writeToConsole():void {
+  count: number = 1
+
+  public writeToConsole(): void {
     console.log("click")
+  }
+
+  public increaseCount(): void {
+    this.count++
   }
 
 }
