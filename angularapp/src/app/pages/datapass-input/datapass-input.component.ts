@@ -7,6 +7,8 @@ import { Component, Input } from '@angular/core';
 })
 export class DatapassInputComponent {
 
+
+
   @Input() name:string | undefined
 
 }
