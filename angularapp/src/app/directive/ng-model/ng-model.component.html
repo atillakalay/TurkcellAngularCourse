@@ -1,0 +1,6 @@
+<h1>ng-model works!</h1>
+<input [ngModel]="name" type="text" (ngModelChange)="name=$event">
+<p>{{name}}</p>
+
+<input [(ngModel)]="name2" type="text" >
+<p>{{name2}}</p>
