@@ -10,6 +10,7 @@ import { Example3Component } from './pages/example3/example3.component';
 import { DatapassInputComponent } from './pages/datapass-input/datapass-input.component';
 import { TwoWayBindingComponent } from './pages/two-way-binding/two-way-binding.component';
 import { FormsModule } from '@angular/forms';
+import { NgOnchangeHookComponent } from './pages/ng-onchange-hook/ng-onchange-hook.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FormsModule } from '@angular/forms';
     Example3Component,
     EventClickComponent,
     DatapassInputComponent,
-    TwoWayBindingComponent
+    TwoWayBindingComponent,
+    NgOnchangeHookComponent
   ],
   imports: [
     BrowserModule,
