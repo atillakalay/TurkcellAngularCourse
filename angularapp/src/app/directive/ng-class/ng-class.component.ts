@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class NgClassComponent {
 
+  isLarge = true
+  isRedBox = true
+  isBorder = true
+
+
+
+  applyCss() {
+    this.isLarge = !this.isLarge
+    this.isRedBox = !this.isRedBox
+    this.isBorder = !this.isBorder
+  }
 }

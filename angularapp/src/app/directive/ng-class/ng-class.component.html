@@ -1,3 +1,4 @@
 <h1>ng-class works!</h1>
 
-<div [ngClass]="{'large':true}">Angular</div>
+<button (click)="applyCss()">CSS Uygula/Kaldır</button>
+<div [ngClass]="{'large':isLarge,'redBox':isRedBox,'blueBorder':isBorder}">Angular</div>
