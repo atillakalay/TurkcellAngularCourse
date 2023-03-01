@@ -9,6 +9,7 @@ import { NgSwitchComponent } from './directive/ng-switch/ng-switch.component';
 import { NgClassComponent } from './directive/ng-class/ng-class.component';
 import { NgStyleComponent } from './directive/ng-style/ng-style.component';
 import { NgModelComponent } from './directive/ng-model/ng-model.component';
+import { CustomDirective } from './directives/custom.directive';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { NgModelComponent } from './directive/ng-model/ng-model.component';
     NgSwitchComponent,
     NgClassComponent,
     NgStyleComponent,
-    NgModelComponent
+    NgModelComponent,
+    CustomDirective
   ],
   imports: [
     BrowserModule,
