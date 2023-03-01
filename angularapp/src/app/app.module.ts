@@ -4,11 +4,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { NgforComponent } from './directive/ngfor/ngfor.component';
+import { NgIfComponent } from './directive/ng-if/ng-if.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NgforComponent
+    NgforComponent,
+    NgIfComponent
   ],
   imports: [
     BrowserModule,
