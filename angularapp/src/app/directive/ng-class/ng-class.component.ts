@@ -10,6 +10,7 @@ export class NgClassComponent {
   isLarge = true
   isRedBox = true
   isBorder = true
+  css:any={large:this.isLarge,redBox:this.isRedBox,blueBorder:this.isBorder}
 
 
 
