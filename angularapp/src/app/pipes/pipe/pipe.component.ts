@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./pipe.component.css']
 })
 export class PipeComponent {
+  person1:person={firstName:"Atilla",lastName:"Kalay",age:23}
 
+
+}
+interface person{
+  firstName:string
+  lastName:string
+  age:number
 }
