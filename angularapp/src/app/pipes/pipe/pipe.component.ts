@@ -9,6 +9,7 @@ export class PipeComponent {
   person1: person = { firstName: "Atilla", lastName: "Kalay", age: 23 }
   myDate: Date = new Date()
   price:number=8500
+  decimalValue=5.85858
 
 }
 interface person {
