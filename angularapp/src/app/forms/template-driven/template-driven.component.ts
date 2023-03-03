@@ -8,7 +8,19 @@ import { NgForm } from '@angular/forms';
 })
 export class TemplateDrivenComponent {
 
-  save(form:NgForm){
-console.log(form.value)
+  loginModel: loginModel
+
+  constructor() {
+    this.loginModel = { userName: "", password: "" }
   }
+
+  save(form:NgForm) {
+    console.log(this.loginModel)
+  }
+
+
+}
+interface loginModel {
+  userName: string
+  password: string
 }
