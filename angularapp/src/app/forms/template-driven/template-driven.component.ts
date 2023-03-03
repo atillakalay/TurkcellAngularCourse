@@ -12,7 +12,7 @@ export class TemplateDrivenComponent {
   loginModel2: loginModelC
 
   constructor() {
-    this.loginModel = { userName: "", password: "", rememberMe: false }
+    this.loginModel = { userName: "", password: "", rememberMe: false, country: 0 }
     this.loginModel2 = new loginModelC()
   }
 
@@ -26,6 +26,7 @@ interface loginModel {
   userName: string
   password: string
   rememberMe: boolean
+  country: number
 }
 class loginModelC {
   userName?: string
