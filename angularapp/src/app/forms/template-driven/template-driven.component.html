@@ -9,13 +9,12 @@
  <input type="checkbox" name="rememberMe" [ngModel]="loginModel.rememberMe">
   <br>
   <label for="country">Ülke</label>
-  <select name="country" [(ngModel)]="loginModel.country">
+  <select name="country" [(ngModel)]="loginModel.country" (ngModelChange)="countryChange($event)">
 <option *ngFor="let item of countryMenu" value="{{item.value}}">{{item.text}}</option>
   </select>
   <br>
-
-  <div *ngFor="let item of genderMenu">
-    <input [ngModel]="loginModel.gender" type="radio" name="gender" [value]="item.value">{{item.text}}
+  <div *ngFor="let item of genderMenu" >
+    <input [ngModel]="loginModel.gender" type="radio" name="gender" [value]="item.value" (ngModelChange)="genderChange($event)">{{item.text}}
   </div>
   <br>
   <button type="submit">Kaydet</button>

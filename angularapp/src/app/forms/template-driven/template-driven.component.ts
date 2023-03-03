@@ -21,6 +21,13 @@ export class TemplateDrivenComponent {
   save(form: NgForm) {
     console.log(this.loginModel)
   }
+
+  countryChange(value: any) {
+    console.log(value)
+  }
+  genderChange(value: any) {
+    console.log(value)
+  }
 }
 
 interface countryDropMenu {
