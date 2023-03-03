@@ -13,7 +13,7 @@ export class TemplateDrivenComponent {
   countryMenu: countryDropMenu[] = [{value:0,text:"Seçiniz"},{ value: 1, text: "Türkiye" }, { value: 2, text: "Almanya" }, { value: 3, text: "Fransa" }, { value: 4, text: "Amerika" }]
 
   constructor() {
-    this.loginModel = { userName: "", password: "", rememberMe: false, country: 0 }
+    this.loginModel = { userName: "", password: "", rememberMe: false, country: 0,gender:1 }
     this.loginModel2 = new loginModelC()
   }
 
@@ -32,6 +32,7 @@ interface loginModel {
   password: string
   rememberMe: boolean
   country: number
+  gender:number
 }
 class loginModelC {
   userName?: string
