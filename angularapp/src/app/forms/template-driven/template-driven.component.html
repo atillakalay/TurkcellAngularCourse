@@ -10,11 +10,7 @@
   <br>
   <label for="country">Ülke</label>
   <select name="country" [(ngModel)]="loginModel.country">
-<option value="0">Seçiniz</option>
-<option value="1">Türkiye</option>
-<option value="2">İngiltere</option>
-<option value="3">Amerika</option>
-<option value="4">Fransa</option>
+<option *ngFor="let item of countryMenu" value="{{item.value}}">{{item.text}}</option>
   </select>
   <br>
   <button type="submit">Kaydet</button>

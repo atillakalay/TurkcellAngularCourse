@@ -10,6 +10,7 @@ export class TemplateDrivenComponent {
 
   loginModel: loginModel
   loginModel2: loginModelC
+  countryMenu: countryDropMenu[] = [{value:0,text:"Seçiniz"},{ value: 1, text: "Türkiye" }, { value: 2, text: "Almanya" }, { value: 3, text: "Fransa" }, { value: 4, text: "Amerika" }]
 
   constructor() {
     this.loginModel = { userName: "", password: "", rememberMe: false, country: 0 }
@@ -19,9 +20,13 @@ export class TemplateDrivenComponent {
   save(form: NgForm) {
     console.log(this.loginModel)
   }
-
-
 }
+
+interface countryDropMenu {
+  text: string
+  value: number
+}
+
 interface loginModel {
   userName: string
   password: string
