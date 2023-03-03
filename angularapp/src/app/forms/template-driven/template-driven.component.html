@@ -1,9 +1,12 @@
 <form #saveForm="ngForm" (ngSubmit)="save(saveForm)">
   <label for="userName">User Name:</label>
   <input type="text" name="userName" id="userName" [ngModel]="loginModel.userName">
-<br>
+  <br>
   <label for="password">Password:</label>
   <input type="password" name="password" id="password" [ngModel]="loginModel.password">
+  <br>
+  <label for="rememberMe">Beni hatırla</label>
+ <input type="checkbox" name="rememberMe" [ngModel]="loginModel.rememberMe">
   <br>
   <button type="submit">Kaydet</button>
 </form>

@@ -9,12 +9,14 @@ import { NgForm } from '@angular/forms';
 export class TemplateDrivenComponent {
 
   loginModel: loginModel
+  loginModel2: loginModelC
 
   constructor() {
-    this.loginModel = { userName: "", password: "" }
+    this.loginModel = { userName: "", password: "", rememberMe: false }
+    this.loginModel2 = new loginModelC()
   }
 
-  save(form:NgForm) {
+  save(form: NgForm) {
     console.log(this.loginModel)
   }
 
@@ -23,4 +25,15 @@ export class TemplateDrivenComponent {
 interface loginModel {
   userName: string
   password: string
+  rememberMe: boolean
+}
+class loginModelC {
+  userName?: string
+  password?: string
+  rememberMe?: boolean
+  // constructor(userName: string, password: string, rememberMe: boolean) {
+  //   this.userName = userName
+  //   this.password = password
+  //   this.rememberMe = rememberMe
+  // }
 }
