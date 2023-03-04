@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormControl, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-template-driven',
@@ -28,7 +28,19 @@ export class TemplateDrivenComponent {
   genderChange(value: any) {
     console.log(value)
   }
+
+  isValid(model: FormControl) {
+    if (!(model.invalid && (model.dirty || model.touched)))return false
+
+      if (model.errors?.['required']) return true
+      if (model.errors?.['minlength']) return true
+
+    return false
+  }
+
 }
+
+
 
 interface countryDropMenu {
   text: string

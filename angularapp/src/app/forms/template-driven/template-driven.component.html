@@ -24,7 +24,7 @@
   <br>
 
   <label for="password">Password:</label>
-  <input #userPasswordInput="ngModel" type="password" name="password" id="password" [ngModel]="loginModel.password" required="" minlength="4" >
+  <input [ngClass]="{invalidRed:isValid(userPasswordInput.control)}" #userPasswordInput="ngModel" type="password" name="password" id="password" [ngModel]="loginModel.password" required="" minlength="4" >
 
 
   <div *ngIf="userPasswordInput.invalid && (userPasswordInput.dirty || userPasswordInput.touched)">
