@@ -1,7 +1,12 @@
 <form #saveForm="ngForm" (ngSubmit)="save(saveForm)">
 
   <label for="userName">User Name:</label>
-  <input #userNameInput="ngModel" type="text" name="userName" id="userName" [ngModel]="loginModel.userName" required="" minlength="5" maxlength="20" pattern="^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$">
+  <input #userNameInput="ngModel" type="text" name="userName" id="userName" [ngModel]="loginModel.userName" required="">
+<div *ngIf="userNameInput.invalid && (userNameInput.dirty || userNameInput.touched)">
+  <small *ngIf="userNameInput.errors?.['required']" style="color: red;">Kullanıcı adı alanı zorunludur.</small>
+</div>
+
+
 
   <div style="border: 1px solid red; padding:10px">
     <ul>
@@ -19,7 +24,13 @@
   <br>
 
   <label for="password">Password:</label>
-  <input #userPasswordInput="ngModel" type="password" name="password" id="password" [ngModel]="loginModel.password" required="">
+  <input #userPasswordInput="ngModel" type="password" name="password" id="password" [ngModel]="loginModel.password" required="" minlength="4" >
+
+
+  <div *ngIf="userPasswordInput.invalid && (userPasswordInput.dirty || userPasswordInput.touched)">
+    <small *ngIf="userPasswordInput.errors?.['required']" style="color: red;">Şifre alanı zorunludur.</small>
+    <small *ngIf="userPasswordInput.errors?.['minlength']" style="color: red;">Şifre alanı en az 4 karekter olabilir.</small>
+  </div>
 
   <div style="border: 1px solid red; padding:10px">
     <ul>
