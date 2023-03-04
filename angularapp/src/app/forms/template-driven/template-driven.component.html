@@ -1,5 +1,8 @@
-<form #saveForm="ngForm" (ngSubmit)="save(saveForm)">
+<div class="alert alert-primary" role="alert">
+  A simple primary alert—check it out!
+</div>
 
+<form #saveForm="ngForm" (ngSubmit)="save(saveForm)">
   <label for="userName">User Name:</label>
   <input #userNameInput="ngModel" type="text" name="userName" id="userName" [ngModel]="loginModel.userName" required="">
 <div *ngIf="userNameInput.invalid && (userNameInput.dirty || userNameInput.touched)">
