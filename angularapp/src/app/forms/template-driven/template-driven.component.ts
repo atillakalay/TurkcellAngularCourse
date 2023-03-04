@@ -38,6 +38,10 @@ export class TemplateDrivenComponent {
     return false
   }
 
+  isSuccessValid(model:FormControl){
+return model.valid && (model.dirty|| model.touched)
+  }
+
 }
 
 
