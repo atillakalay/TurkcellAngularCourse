@@ -1,7 +1,7 @@
 <form #saveForm="ngForm" (ngSubmit)="save(saveForm)">
 
   <label for="userName">User Name:</label>
-  <input #userNameInput="ngModel" type="text" name="userName" id="userName" [ngModel]="loginModel.userName">
+  <input #userNameInput="ngModel" type="text" name="userName" id="userName" [ngModel]="loginModel.userName" required="" minlength="5" maxlength="20" pattern="^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$">
 
   <div style="border: 1px solid red; padding:10px">
     <ul>
@@ -19,7 +19,7 @@
   <br>
 
   <label for="password">Password:</label>
-  <input #userPasswordInput="ngModel" type="password" name="password" id="password" [ngModel]="loginModel.password">
+  <input #userPasswordInput="ngModel" type="password" name="password" id="password" [ngModel]="loginModel.password" required="">
 
   <div style="border: 1px solid red; padding:10px">
     <ul>
