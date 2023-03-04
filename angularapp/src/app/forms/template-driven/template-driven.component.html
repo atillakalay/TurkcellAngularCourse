@@ -1,21 +1,53 @@
 <form #saveForm="ngForm" (ngSubmit)="save(saveForm)">
+
   <label for="userName">User Name:</label>
-  <input type="text" name="userName" id="userName" [ngModel]="loginModel.userName">
+  <input #userNameInput="ngModel" type="text" name="userName" id="userName" [ngModel]="loginModel.userName">
+
+  <div style="border: 1px solid red; padding:10px">
+    <ul>
+      <li>Valid: {{userNameInput.valid}}</li>
+      <li>InValid: {{userNameInput.invalid}}</li>
+      <li>Errors: {{userNameInput.errors|json}}</li>
+      <li>Dirty: {{userNameInput.dirty}}</li>
+      <li>Pristine: {{userNameInput.pristine}}</li>
+      <li>Touched: {{userNameInput.touched}}</li>
+      <li>UnTouched: {{userNameInput.untouched}}</li>
+      <li>Value: {{userNameInput.value}}</li>
+    </ul>
+  </div>
+
   <br>
+
   <label for="password">Password:</label>
-  <input type="password" name="password" id="password" [ngModel]="loginModel.password">
+  <input #userPasswordInput="ngModel" type="password" name="password" id="password" [ngModel]="loginModel.password">
+
+  <div style="border: 1px solid red; padding:10px">
+    <ul>
+      <li>Valid: {{userPasswordInput.valid}}</li>
+      <li>InValid: {{userPasswordInput.invalid}}</li>
+      <li>Errors: {{userPasswordInput.errors|json}}</li>
+      <li>Dirty: {{userPasswordInput.dirty}}</li>
+      <li>Pristine: {{userPasswordInput.pristine}}</li>
+      <li>Touched: {{userPasswordInput.touched}}</li>
+      <li>UnTouched: {{userPasswordInput.untouched}}</li>
+      <li>Value: {{userPasswordInput.value}}</li>
+    </ul>
+  </div>
+
   <br>
+
   <label for="rememberMe">Beni hatırla</label>
  <input type="checkbox" name="rememberMe" [ngModel]="loginModel.rememberMe">
   <br>
-  <label for="country">Ülke</label>
-  <select name="country" [(ngModel)]="loginModel.country" (ngModelChange)="countryChange($event)">
+
+  <!-- <label for="country">Ülke</label> -->
+  <!-- <select name="country" [(ngModel)]="loginModel.country" (ngModelChange)="countryChange($event)">
 <option *ngFor="let item of countryMenu" value="{{item.value}}">{{item.text}}</option>
-  </select>
-  <br>
+  </select> -->
+  <!-- <br>
   <div *ngFor="let item of genderMenu" >
     <input [ngModel]="loginModel.gender" type="radio" name="gender" [value]="item.value" (ngModelChange)="genderChange($event)">{{item.text}}
   </div>
-  <br>
+  <br> -->
   <button type="submit">Kaydet</button>
 </form>
