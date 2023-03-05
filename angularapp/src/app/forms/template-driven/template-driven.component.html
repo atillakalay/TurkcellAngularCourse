@@ -66,15 +66,21 @@
     </div>
       <br>
 
-      <!-- <label for="country">Ülke</label> -->
-      <!-- <select name="country" [(ngModel)]="loginModel.country" (ngModelChange)="countryChange($event)">
+      <label class="form-label" for="country">Ülke</label>
+      <select class="form-select" name="country" [(ngModel)]="loginModel.country" (ngModelChange)="countryChange($event)">
     <option *ngFor="let item of countryMenu" value="{{item.value}}">{{item.text}}</option>
-      </select> -->
-      <!-- <br>
-      <div *ngFor="let item of genderMenu" >
-        <input [ngModel]="loginModel.gender" type="radio" name="gender" [value]="item.value" (ngModelChange)="genderChange($event)">{{item.text}}
-      </div>
-      <br> -->
+      </select>
+    <br>
+
+<div class="form-check" *ngFor="let item of genderMenu">
+  <input class="form-check-input"  [ngModel]="loginModel.gender" type="radio" name="gender" [value]="item.value" (ngModelChange)="genderChange($event)">
+  <label class="form-check-label" for="flexRadioDefault1">
+{{item.text}}
+  </label>
+</div>
+
+
+
       <button class="btn btn-info" type="submit">Kaydet</button>
     </form>
 
