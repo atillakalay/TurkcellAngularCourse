@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-md-8 offset-md-2">
+    <form [formGroup]="loginForm" (ngSubmit)="signIn()">
+      <div class="mb-3">
+        <label for="userName" class="form-label">User Name:</label>
+        <input class="form-control" type="text" formControlName="userName" />
+      </div>
+
+      <div class="mb-3">
+        <label for="password" class="form-label">Password:</label>
+        <input class="form-control" type="password" formControlName="password"/>
+      </div>
+      <button class="btn btn-info" type="submit">Giriş</button>
+    </form>
+  </div>
+</div>
