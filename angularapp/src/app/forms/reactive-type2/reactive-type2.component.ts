@@ -12,7 +12,8 @@ export class ReactiveType2Component {
   constructor() {
     this.loginForm = new FormGroup({
       userName: new FormControl(),
-      password: new FormControl()
+      password: new FormControl(),
+      rememberMe: new FormControl()
     })
   }
 
