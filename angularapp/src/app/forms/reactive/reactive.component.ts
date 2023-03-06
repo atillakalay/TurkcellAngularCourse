@@ -16,4 +16,8 @@ export class ReactiveComponent {
       password: ''
     })
   }
+
+  signIn() {
+    console.log(this.loginForm.value)
+  }
 }
