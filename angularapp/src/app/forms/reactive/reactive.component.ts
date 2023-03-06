@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-reactive',
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class ReactiveComponent {
 
+  loginForm: FormGroup
+
+  constructor(fb: FormBuilder) {
+    this.loginForm = fb.group({
+      userName: '',
+      password: ''
+    })
+  }
 }
