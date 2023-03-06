@@ -25,8 +25,13 @@
         />
         <label class="form-check-label" for="rememberMe">Beni Hatırla</label>
       </div>
+      <select class="form-select mt-2" formControlName="country">
+        <option *ngFor="let item of countryMenu" value="{{ item.value }}">
+          {{ item.text }}
+        </option>
+      </select>
 
-      <button class="btn btn-info" type="submit">Giriş</button>
+      <button class="btn btn-info mt-2" type="submit">Giriş</button>
     </form>
   </div>
 </div>
