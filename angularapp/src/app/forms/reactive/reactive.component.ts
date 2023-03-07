@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { CountryDropMenu} from 'src/app/models/country-drop-menu';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { CountryDropMenu } from 'src/app/models/country-drop-menu';
 import { GenderRadioMenu } from 'src/app/models/gender-radio-menu';
 
 
@@ -17,11 +17,11 @@ export class ReactiveComponent {
 
   constructor(fb: FormBuilder) {
     this.loginForm = fb.group({
-      userName: '',
-      password: '',
+      userName: fb.control('', Validators.required),
+      password: fb.control('', [Validators.required, Validators.minLength(4)]),
       rememberMe: false,
-      country:0,
-      gender:[1]
+      country: 0,
+      gender: [1]
     })
   }
 
