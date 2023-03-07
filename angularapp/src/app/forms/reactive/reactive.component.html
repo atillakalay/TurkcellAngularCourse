@@ -43,7 +43,7 @@
           style="color: red"
           >Şifre alanı zorunludur.</small
         >
-        <small
+        <small 
           *ngIf="loginForm.get('password')?.errors?.['minlength']"
           style="color: red"
           >Şifre alanı en az 4 karekter olabilir.</small

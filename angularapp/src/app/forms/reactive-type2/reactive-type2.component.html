@@ -7,17 +7,25 @@
         <input class="form-control" type="text" formControlName="userName" />
       </div>
 
-      <div class="alert alert-info" >
+      <div class="alert alert-info">
         <ul>
-          <li>Valid: {{loginForm.get("userName")?.valid}}</li>
-          <li>InValid: {{loginForm.get("userName")?.invalid}}</li>
-          <li>Errors: {{loginForm.get("userName")?.errors|json}}</li>
-          <li>Dirty: {{loginForm.get("userName")?.dirty}}</li>
-          <li>Pristine: {{loginForm.get("userName")?.pristine}}</li>
-          <li>Touched: {{loginForm.get("userName")?.touched}}</li>
-          <li>UnTouched: {{loginForm.get("userName")?.untouched}}</li>
-          <li>Value: {{loginForm.get("userName")?.value}}</li>
+          <li>Valid: {{ loginForm.get("userName")?.valid }}</li>
+          <li>InValid: {{ loginForm.get("userName")?.invalid }}</li>
+          <li>Errors: {{ loginForm.get("userName")?.errors | json }}</li>
+          <li>Dirty: {{ loginForm.get("userName")?.dirty }}</li>
+          <li>Pristine: {{ loginForm.get("userName")?.pristine }}</li>
+          <li>Touched: {{ loginForm.get("userName")?.touched }}</li>
+          <li>UnTouched: {{ loginForm.get("userName")?.untouched }}</li>
+          <li>Value: {{ loginForm.get("userName")?.value }}</li>
         </ul>
+      </div>
+
+      <div class="alert alert-danger" *ngIf="isInvalidMessageShow('userName')">
+        <small
+          *ngIf="loginForm.get('userName')?.errors?.['required']"
+          style="color: red"
+          >Kullanıcı adı alanı zorunludur.</small
+        >
       </div>
 
       <div class="mb-3">
@@ -29,16 +37,29 @@
         />
       </div>
 
-      <div class="alert alert-info" >
+      <div class="alert alert-danger" *ngIf="isInvalidMessageShow('password')">
+        <small
+          *ngIf="loginForm.get('password')?.errors?.['required']"
+          style="color: red"
+          >Şifre alanı zorunludur.</small
+        >
+        <small
+          *ngIf="loginForm.get('password')?.errors?.['minlength']"
+          style="color: red"
+          >Şifre alanı en az 4 karekter olabilir.</small
+        >
+      </div>
+
+      <div class="alert alert-info">
         <ul>
-          <li>Valid: {{loginForm.get("password")?.valid}}</li>
-          <li>InValid: {{loginForm.get("password")?.invalid}}</li>
-          <li>Errors: {{loginForm.get("password")?.errors|json}}</li>
-          <li>Dirty: {{loginForm.get("password")?.dirty}}</li>
-          <li>Pristine: {{loginForm.get("password")?.pristine}}</li>
-          <li>Touched: {{loginForm.get("password")?.touched}}</li>
-          <li>UnTouched: {{loginForm.get("password")?.untouched}}</li>
-          <li>Value: {{loginForm.get("password")?.value}}</li>
+          <li>Valid: {{ loginForm.get("password")?.valid }}</li>
+          <li>InValid: {{ loginForm.get("password")?.invalid }}</li>
+          <li>Errors: {{ loginForm.get("password")?.errors | json }}</li>
+          <li>Dirty: {{ loginForm.get("password")?.dirty }}</li>
+          <li>Pristine: {{ loginForm.get("password")?.pristine }}</li>
+          <li>Touched: {{ loginForm.get("password")?.touched }}</li>
+          <li>UnTouched: {{ loginForm.get("password")?.untouched }}</li>
+          <li>Value: {{ loginForm.get("password")?.value }}</li>
         </ul>
       </div>
 
@@ -59,9 +80,14 @@
       </select>
 
       <div class="form-check" *ngFor="let item of genderMenu">
-        <input formControlName="gender" class="form-check-input" type="radio" [value]="item.value">
+        <input
+          formControlName="gender"
+          class="form-check-input"
+          type="radio"
+          [value]="item.value"
+        />
         <label class="form-check-label" for="flexRadioDefault1">
-      {{item.text}}
+          {{ item.text }}
         </label>
       </div>
 
