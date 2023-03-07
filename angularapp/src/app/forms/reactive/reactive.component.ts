@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { CountryDropMenu } from 'src/app/models/country-drop-menu';
 import { GenderRadioMenu } from 'src/app/models/gender-radio-menu';
 
@@ -20,8 +20,9 @@ export class ReactiveComponent {
       userName: fb.control('', Validators.required),
       password: fb.control('', [Validators.required, Validators.minLength(4)]),
       rememberMe: false,
-      country: fb.control('',Validators.required),
-      gender: [1]
+      country: fb.control('', Validators.required),
+      gender: [1],
+      birthDay: fb.control('')
     })
   }
 
@@ -50,4 +51,12 @@ export class ReactiveComponent {
     let formControl = this.loginForm.get(formControlName)
     return formControl?.invalid && (formControl.dirty || formControl.touched)
   }
+
+  isOldEmough = (control: FormControl): { isYoung: true } | null => {
+    const birthDate = new Date(control.value)
+    birthDate.setFullYear(birthDate.getFullYear() + 18)
+    return birthDate < new Date() ? null : { isYoung: true }
+  }
+
+
 }
