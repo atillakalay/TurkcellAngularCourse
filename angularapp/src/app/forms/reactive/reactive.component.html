@@ -7,14 +7,7 @@
         <input class="form-control" type="text" formControlName="userName" />
       </div>
 
-      <div
-        class="alert alert-danger"
-        *ngIf="
-          loginForm.get('userName')?.invalid &&
-          (loginForm.get('userName')?.dirty ||
-            loginForm.get('userName')?.touched)
-        "
-      >
+      <div class="alert alert-danger" *ngIf="isInvalidMessageShow('userName')">
         <small
           *ngIf="loginForm.get('userName')?.errors?.['required']"
           style="color: red"
@@ -44,14 +37,7 @@
         />
       </div>
 
-      <div
-        class="alert alert-danger"
-        *ngIf="
-          loginForm.get('password')?.invalid &&
-          (loginForm.get('password')?.dirty ||
-            loginForm.get('password')?.touched)
-        "
-      >
+      <div class="alert alert-danger" *ngIf="isInvalidMessageShow('password')">
         <small
           *ngIf="loginForm.get('password')?.errors?.['required']"
           style="color: red"

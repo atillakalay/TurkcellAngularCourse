@@ -28,4 +28,10 @@ export class ReactiveComponent {
   signIn() {
     console.log(this.loginForm.value)
   }
+
+  isInvalidMessageShow(formControlName: string) {
+    return this.loginForm.get(formControlName)?.invalid &&
+      (this.loginForm.get(formControlName)?.dirty ||
+        this.loginForm.get(formControlName)?.touched)
+  }
 }
