@@ -34,4 +34,20 @@ export class ReactiveComponent {
       (this.loginForm.get(formControlName)?.dirty ||
         this.loginForm.get(formControlName)?.touched)
   }
+
+  isValid(formControlName: string): boolean {
+
+    let formControl = this.loginForm.get(formControlName)
+    if (!(formControl?.invalid && (formControl.dirty || formControl.touched))) return false
+
+    if (formControl.errors?.['required']) return true
+    if (formControl.errors?.['minlength']) return true
+
+    return false
+  }
+
+  isSuccessValid(formControlName: string) {
+    let formControl = this.loginForm.get(formControlName)
+    return formControl?.invalid && (formControl.dirty || formControl.touched)
+  }
 }

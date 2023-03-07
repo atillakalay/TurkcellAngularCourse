@@ -34,6 +34,10 @@
           class="form-control"
           type="password"
           formControlName="password"
+          [ngClass]="{
+            invalidRed: isValid('password'),
+            validGreen: isSuccessValid('password')
+          }"
         />
       </div>
 
@@ -43,7 +47,7 @@
           style="color: red"
           >Şifre alanı zorunludur.</small
         >
-        <small 
+        <small
           *ngIf="loginForm.get('password')?.errors?.['minlength']"
           style="color: red"
           >Şifre alanı en az 4 karekter olabilir.</small
