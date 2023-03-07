@@ -109,9 +109,21 @@
       </div>
 
      <div>
-      <label for="birthDay">Doğum Tarihi</label>
-      <input class="form-control" type="date" formControlName="birthDay">
+      <label for="birthDate">Doğum Tarihi</label>
+      <input class="form-control" type="date" formControlName="birthDate">
      </div>
+     <div class="alert alert-info mt-2">
+      <ul>
+        <li>Valid: {{ loginForm.get("birthDate")?.valid }}</li>
+        <li>InValid: {{ loginForm.get("birthDate")?.invalid }}</li>
+        <li>Errors: {{ loginForm.get("birthDate")?.errors | json }}</li>
+        <li>Dirty: {{ loginForm.get("birthDate")?.dirty }}</li>
+        <li>Pristine: {{ loginForm.get("birthDate")?.pristine }}</li>
+        <li>Touched: {{ loginForm.get("birthDate")?.touched }}</li>
+        <li>UnTouched: {{ loginForm.get("birthDate")?.untouched }}</li>
+        <li>Value: {{ loginForm.get("birthDate")?.value }}</li>
+      </ul>
+    </div>
 
       <button class="btn btn-info mt-2" type="submit">Giriş</button>
     </form>

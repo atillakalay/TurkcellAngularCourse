@@ -22,7 +22,7 @@ export class ReactiveComponent {
       rememberMe: false,
       country: fb.control('', Validators.required),
       gender: [1],
-      birthDay: fb.control('')
+      birthDate: fb.control('',[Validators.required,this.isOldEmough])
     })
   }
 
