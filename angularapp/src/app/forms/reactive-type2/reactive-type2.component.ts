@@ -18,8 +18,8 @@ export class ReactiveType2Component {
       userName: new FormControl(),
       password: new FormControl(),
       rememberMe: new FormControl(),
-      country: new FormControl(0)
-      gender: new FormControl(0)
+      country: new FormControl(0),
+      gender: new FormControl([1])
     })
   }
 
