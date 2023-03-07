@@ -12,7 +12,7 @@ import { GenderRadioMenu } from 'src/app/models/gender-radio-menu';
 export class ReactiveComponent {
 
   loginForm: FormGroup
-  countryMenu: CountryDropMenu[] = [{ value: 0, text: "Seçiniz" }, { value: 1, text: "Türkiye" }, { value: 2, text: "Almanya" }, { value: 3, text: "Fransa" }, { value: 4, text: "Amerika" }]
+  countryMenu: CountryDropMenu[] = [{ value: 1, text: "Türkiye" }, { value: 2, text: "Almanya" }, { value: 3, text: "Fransa" }, { value: 4, text: "Amerika" }]
   genderMenu: GenderRadioMenu[] = [{ value: 1, text: "Erkek" }, { value: 2, text: "Kadın" }]
 
   constructor(fb: FormBuilder) {
@@ -20,7 +20,7 @@ export class ReactiveComponent {
       userName: fb.control('', Validators.required),
       password: fb.control('', [Validators.required, Validators.minLength(4)]),
       rememberMe: false,
-      country: 0,
+      country: fb.control('',Validators.required),
       gender: [1]
     })
   }

@@ -77,10 +77,24 @@
         <label class="form-check-label" for="rememberMe">Beni Hatırla</label>
       </div>
       <select class="form-select mt-2" formControlName="country">
+        <option value="">Seçiniz</option>
         <option *ngFor="let item of countryMenu" value="{{ item.value }}">
           {{ item.text }}
         </option>
       </select>
+
+      <div class="alert alert-info mt-2">
+        <ul>
+          <li>Valid: {{ loginForm.get("country")?.valid }}</li>
+          <li>InValid: {{ loginForm.get("country")?.invalid }}</li>
+          <li>Errors: {{ loginForm.get("country")?.errors | json }}</li>
+          <li>Dirty: {{ loginForm.get("country")?.dirty }}</li>
+          <li>Pristine: {{ loginForm.get("country")?.pristine }}</li>
+          <li>Touched: {{ loginForm.get("country")?.touched }}</li>
+          <li>UnTouched: {{ loginForm.get("country")?.untouched }}</li>
+          <li>Value: {{ loginForm.get("country")?.value }}</li>
+        </ul>
+      </div>
 
       <div class="form-check" *ngFor="let item of genderMenu">
         <input
