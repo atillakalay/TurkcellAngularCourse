@@ -4,6 +4,12 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class HelperService {
-  
-  constructor() { }
+
+  constructor() {
+
+  }
+
+  upper(text: string) {
+    return text.toUpperCase()
+  }
 }
