@@ -13,6 +13,7 @@ export class FirstComponentComponent {
   ngOnInit(): void {
     console.log(this.helperService.upper("Angular (first)"))
     console.log(this.title.setTitle("Angular First Component"))
+    this.helperService.sendSms("Merhabalar bu bir deneme mesajıdır.","05050505050505")
   }
 
   change() {

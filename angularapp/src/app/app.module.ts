@@ -8,6 +8,7 @@ import { SecondComponentComponent } from './components/second-component/second-c
 import { HelperService } from './services/helper.service';
 import { Helper2Service } from './services/helper2.service';
 
+let isProd: boolean = false
 
 
 @NgModule({
@@ -22,7 +23,7 @@ import { Helper2Service } from './services/helper2.service';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [{ provide: HelperService, useClass: Helper2Service }],
+  providers: [{ provide: HelperService, useClass: isProd ? HelperService : Helper2Service }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
