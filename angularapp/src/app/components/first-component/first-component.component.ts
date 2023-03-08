@@ -8,7 +8,7 @@ import { HelperService } from 'src/app/services/helper.service';
   styleUrls: ['./first-component.component.css']
 })
 export class FirstComponentComponent {
-  constructor(private helperService: HelperService, private title: Title) { }
+  constructor(public helperService: HelperService, private title: Title) { }
 
   ngOnInit(): void {
     console.log(this.helperService.upper("Angular (first)"))
