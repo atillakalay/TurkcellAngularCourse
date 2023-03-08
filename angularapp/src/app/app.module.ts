@@ -7,6 +7,7 @@ import { FirstComponentComponent } from './components/first-component/first-comp
 import { SecondComponentComponent } from './components/second-component/second-component.component';
 import { HelperService } from './services/helper.service';
 import { Helper2Service } from './services/helper2.service';
+import { backend_url } from './consts';
 
 let isProd: boolean = false
 
@@ -23,7 +24,8 @@ let isProd: boolean = false
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [{ provide: HelperService, useClass: isProd ? HelperService : Helper2Service }],
+  providers: [{ provide: HelperService, useClass: isProd ? HelperService : Helper2Service }, { provide: backend_url, useValue: 'http://www.api.com' }]
+  ,
   bootstrap: [AppComponent]
 })
 export class AppModule { }
