@@ -6,6 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FirstComponentComponent } from './components/first-component/first-component.component';
 import { SecondComponentComponent } from './components/second-component/second-component.component';
 import { HelperService } from './services/helper.service';
+import { Helper2Service } from './services/helper2.service';
 
 
 
@@ -21,7 +22,7 @@ import { HelperService } from './services/helper.service';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [HelperService],
+  providers: [{ provide: HelperService, useClass: Helper2Service }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
