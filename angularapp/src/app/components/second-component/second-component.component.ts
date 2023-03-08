@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Meta } from '@angular/platform-browser';
 import { HelperService } from 'src/app/services/helper.service';
 
 @Component({
@@ -7,12 +8,14 @@ import { HelperService } from 'src/app/services/helper.service';
   styleUrls: ['./second-component.component.css']
 })
 export class SecondComponentComponent {
-  constructor(private helperService: HelperService) {
+  constructor(private helperService: HelperService, private meta:Meta) {
 
   }
 
   ngOnInit(): void {
     console.log(this.helperService.upper("Angular (Second)"))
+    this.meta.addTag({name:"author",content:"Atilla Kalay"})
+    this.meta.addTag({name:"editor",content:"Atilla Kalay"})
   }
 
   show(){
