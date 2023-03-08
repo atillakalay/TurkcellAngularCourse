@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FirstComponentComponent } from './components/first-component/first-component.component';
 import { SecondComponentComponent } from './components/second-component/second-component.component';
+import { HelperService } from './services/helper.service';
 
 
 
@@ -20,7 +21,7 @@ import { SecondComponentComponent } from './components/second-component/second-c
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [HelperService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
