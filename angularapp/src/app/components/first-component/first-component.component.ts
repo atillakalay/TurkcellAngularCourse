@@ -11,6 +11,9 @@ export class FirstComponentComponent {
 
   ngOnInit(): void {
     console.log(this.helperService.upper("Angular (first)"))
+  }
 
+  change() {
+    console.log(this.helperService.title = "Component A title")
   }
 }

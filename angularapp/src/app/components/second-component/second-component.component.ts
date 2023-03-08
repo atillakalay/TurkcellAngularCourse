@@ -13,7 +13,10 @@ export class SecondComponentComponent {
 
   ngOnInit(): void {
     console.log(this.helperService.upper("Angular (Second)"))
+  }
 
+  show(){
+    console.log(this.helperService.title="Title is B")
   }
 
 
