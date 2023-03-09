@@ -7,9 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angularapp';
-
-  save(input: String) {
-    console.log(input)
-  }
-
 }
