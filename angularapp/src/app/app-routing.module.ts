@@ -5,6 +5,7 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { SecondPageComponent } from './pages/second-page/second-page.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'anasayfa', pathMatch: 'full' },
   { path: 'anasayfa', component: HomePageComponent },
   { path: 'birinci-sayfa', component: FirstPageComponent },
   { path: 'ikinci-sayfa', component: SecondPageComponent },
