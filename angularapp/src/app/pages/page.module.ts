@@ -9,6 +9,7 @@ import { SecondPageComponent } from './second-page/second-page.component';
   declarations: [FirstPageComponent, SecondPageComponent],
   imports: [
     CommonModule
-  ]
+  ],
+  exports: [FirstPageComponent, SecondPageComponent]
 })
 export class PageModule { }
