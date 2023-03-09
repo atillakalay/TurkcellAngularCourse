@@ -14,7 +14,7 @@ export class FirstPageComponent {
 
   goSecondPage() {
     // this.route.navigateByUrl("/ikinci-sayfa")
-    //this.route.navigate(["/ikinci-sayfa"])
+    this.route.navigate(["/ikinci-sayfa",5])
   }
 
 }

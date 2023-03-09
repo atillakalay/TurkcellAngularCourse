@@ -8,7 +8,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'anasayfa', pathMatch: 'full' },
   { path: 'anasayfa', component: HomePageComponent },
   { path: 'birinci-sayfa', component: FirstPageComponent },
-  { path: 'ikinci-sayfa', component: SecondPageComponent },
+  { path: 'ikinci-sayfa/:id', component: SecondPageComponent },
 ];
 
 @NgModule({
