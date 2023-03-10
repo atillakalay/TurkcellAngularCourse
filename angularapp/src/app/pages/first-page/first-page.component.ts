@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-first-page',
@@ -8,8 +8,15 @@ import { Router } from '@angular/router';
 })
 export class FirstPageComponent {
 
-  constructor(private route: Router) {
+  constructor(private route: Router,private activetedRoute:ActivatedRoute) {
 
+  }
+
+  ngOnInit(): void {
+   let page= this.activetedRoute.snapshot.queryParamMap.get('page')
+   let pageSize= this.activetedRoute.snapshot.queryParamMap.get('pageSize')
+
+   console.log(`page: ${page} / pageSize: ${pageSize}`)
   }
 
   goSecondPage() {
