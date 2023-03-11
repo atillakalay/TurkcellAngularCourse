@@ -1,5 +1,23 @@
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { AdminHomeComponent } from './adminPages/home/home.component';
+import { MemberComponent } from './adminPages/member/member.component';
+import { ReportComponent } from './adminPages/report/report.component';
+import { AboutComponent } from './pages/about/about.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { GalleryComponent } from './pages/gallery/gallery.component';
+import { HomeComponent } from './pages/home/home.component';
+
+const routes: Routes = [
+  { path: "anasayfa", component: HomeComponent },
+  { path: "hakkında", component: AboutComponent },
+  { path: "iletişim", component: ContactComponent },
+  { path: "galeri", component: GalleryComponent },
+  {path:"admin",component:AdminHomeComponent,children:[
+    { path: "uyeler", component: MemberComponent },
+    { path: "raporlar", component: ReportComponent },
+  ]},
+]
 
 
 @NgModule({
