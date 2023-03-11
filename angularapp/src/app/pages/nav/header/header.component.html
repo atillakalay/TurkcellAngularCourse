@@ -15,9 +15,9 @@
       <ul class="navbar-nav">
         <li class="nav-item">
           <a
-            routerLink="/anasayfa"
-            routerLinkActive="currentActive"
             class="nav-link active"
+            routerLink="/"
+            [ngClass]="{'currentActive':isHomePage()}"
             >Ana Sayfa</a
           >
         </li>

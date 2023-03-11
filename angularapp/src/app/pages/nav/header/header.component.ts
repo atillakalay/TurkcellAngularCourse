@@ -6,4 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+  ngOnInit(): void {
+    console.log(location.pathname)
+  }
+
+  isHomePage(){
+    return location.pathname=='/'
+  }
 }
