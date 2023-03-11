@@ -9,19 +9,22 @@ import { GalleryComponent } from './pages/gallery/gallery.component';
 import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [
+  { path: "", redirectTo: 'anasayfa', pathMatch: 'full' },
   { path: "anasayfa", component: HomeComponent },
-  { path: "hakkında", component: AboutComponent },
-  { path: "iletişim", component: ContactComponent },
+  { path: "hakkinda", component: AboutComponent },
+  { path: "iletisim", component: ContactComponent },
   { path: "galeri", component: GalleryComponent },
-  {path:"admin",component:AdminHomeComponent,children:[
-    { path: "uyeler", component: MemberComponent },
-    { path: "raporlar", component: ReportComponent },
-  ]},
+  {
+    path: "admin", component: AdminHomeComponent, children: [
+      { path: "uyeler", component: MemberComponent },
+      { path: "raporlar", component: ReportComponent },
+    ]
+  },
 ]
 
 
 @NgModule({
-  imports: [],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule],
 })
 export class AppRoutingModule { }
