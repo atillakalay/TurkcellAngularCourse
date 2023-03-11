@@ -13,8 +13,13 @@ export class FirstPageComponent {
   }
 
   ngOnInit(): void {
+    console.log("FirstPage Yüklendi")
    let page= this.activetedRoute.snapshot.queryParamMap.get('page')
    let pageSize= this.activetedRoute.snapshot.queryParamMap.get('pageSize')
+
+   this.activetedRoute.queryParamMap.subscribe(x=>{
+    console.log(x)
+   })
 
    console.log(`page: ${page} / pageSize: ${pageSize}`)
   }
@@ -22,6 +27,10 @@ export class FirstPageComponent {
   goSecondPage() {
     // this.route.navigateByUrl("/ikinci-sayfa")
     this.route.navigate(["/ikinci-sayfa",5])
+  }
+
+  changeQueryParams(){
+    this.route.navigate(['birinci-sayfa'],{queryParams:{page:10,pageSize:20}})
   }
 
 }
