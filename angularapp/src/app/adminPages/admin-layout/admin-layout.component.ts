@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./admin-layout.component.css']
 })
 export class AdminLayoutComponent {
+  ngOnInit(): void {
+    console.log(location.pathname)
+  }
 
+  isHomePage(){
+    return location.pathname=='/'
+  }
 }

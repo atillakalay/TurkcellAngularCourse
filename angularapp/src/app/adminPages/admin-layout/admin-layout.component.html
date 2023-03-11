@@ -17,6 +17,7 @@
           <a
             class="nav-link active"
             routerLink="/admin"
+            [ngClass]="{'currentActive':isHomePage()}"
             >Ana Sayfa</a
           >
         </li>
@@ -24,6 +25,7 @@
           <a
             routerLink="uyeler"
             class="nav-link"
+            routerLinkActive="currentActive"
             >Üyeler</a
           >
         </li>
@@ -38,7 +40,6 @@
         <li class="nav-item">
           <a
             routerLink="/"
-            routerLinkActive="currentActive"
             class="nav-link"
             >Normal Sayfaya Dön</a
           >
