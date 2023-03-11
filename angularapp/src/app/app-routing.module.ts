@@ -21,7 +21,7 @@ const routes: Routes = [
   },
   {
     path: "admin", component: AdminLayoutComponent, children: [
-      { path: "anasayfa", component: AdminHomeComponent },
+      { path: "", component: AdminHomeComponent },
       { path: "uyeler", component: MemberComponent },
       { path: "raporlar", component: ReportComponent },
     ]

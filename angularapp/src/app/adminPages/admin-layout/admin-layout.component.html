@@ -1,1 +1,51 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            routerLink="/admin"
+            >Ana Sayfa</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            routerLink="uyeler"
+            class="nav-link"
+            >Üyeler</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            routerLink="raporlar"
+            routerLinkActive="currentActive"
+            class="nav-link"
+            >Raporlar</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            routerLink="/"
+            routerLinkActive="currentActive"
+            class="nav-link"
+            >Normal Sayfaya Dön</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
 <router-outlet></router-outlet>
