@@ -6,11 +6,12 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './nav/header/header.component';
 import { RouterModule } from '@angular/router';
+import { LayoutComponent } from './layout/layout.component';
 
 
 
 @NgModule({
-  declarations: [AboutComponent, ContactComponent, GalleryComponent, HomeComponent, HeaderComponent],
+  declarations: [AboutComponent, ContactComponent, GalleryComponent, HomeComponent, HeaderComponent, LayoutComponent],
   imports: [
     CommonModule,
     RouterModule,
