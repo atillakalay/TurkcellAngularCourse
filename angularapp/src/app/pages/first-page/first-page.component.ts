@@ -18,7 +18,7 @@ export class FirstPageComponent {
    let pageSize= this.activetedRoute.snapshot.queryParamMap.get('pageSize')
 
    this.activetedRoute.queryParamMap.subscribe(x=>{
-    console.log(x)
+    console.log(`dynamicPage: ${x.get('page')} / pageSize: ${x.get('pageSize')}`)
    })
 
    console.log(`page: ${page} / pageSize: ${pageSize}`)

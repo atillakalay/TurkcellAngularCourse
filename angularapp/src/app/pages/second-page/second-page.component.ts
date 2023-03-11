@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-second-page',
@@ -7,13 +7,21 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./second-page.component.css']
 })
 export class SecondPageComponent {
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute, private router: Router) {
 
   }
 
   ngOnInit(): void {
     let id = this.route.snapshot.paramMap.get('id')
     console.log(id)
+
+    this.route.paramMap.subscribe(x => {
+      console.log("Dynamic Id: " + x.get('id'))
+    })
+  }
+
+  changeId() {
+    this.router.navigate(['ikinci-sayfa', 10])
   }
 
 }
