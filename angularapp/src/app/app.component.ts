@@ -19,10 +19,14 @@ export class AppComponent implements OnInit {
     let myObserveble = new Observable<string>(data => {
       data.next("Atilla")
       data.next("Atilla")
+      data.complete()
     })
 
-    myObserveble.subscribe(x => {
-      console.log(x)
+    myObserveble.subscribe({
+      next(data) { console.log(data) },
+      error(err) { console.log(err) },
+      complete() { console.log("Data yayınlama sona erdi") }
+
     })
   }
 
