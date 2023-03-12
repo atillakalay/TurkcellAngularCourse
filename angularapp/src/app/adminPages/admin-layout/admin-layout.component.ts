@@ -11,6 +11,6 @@ export class AdminLayoutComponent {
   }
 
   isHomePage(){
-    return location.pathname=='/'
+    return location.pathname=='/admin'
   }
 }
