@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { defer, fromEvent, interval, of, range, timer } from 'rxjs';
+import { defer, from, fromEvent, interval, of, range, timer } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -13,33 +13,25 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
 
-    let ofObservable = of(new Date())
+    const map = new Map()
+    map.set(1, "Kitap1")
+    map.set(2, "Kitap2")
+    map.set(3, "Kitap3")
+    map.set(4, "Kitap4")
+    map.set(5, "Kitap5")
 
-    let deferObservable = defer(() => of(new Date()))
 
-    let timerObservable = timer(3000)
+    let ofObservable = from(map)
 
-    timerObservable.subscribe(x => {
-      ofObservable.subscribe({
-        next: (val) => console.log(`of: ${val}`),
-        error: (e) => console.log(e),
-        complete: () => console.log("Tamamlandı.")
-      })
+    ofObservable.subscribe({
+      next: (val) => console.log(`From: ${val}`),
+      error: (e) => console.log(e),
+      complete: () => console.log("Tamamlandı.")
     })
-
-    timerObservable.subscribe(x => {
-      deferObservable.subscribe({
-        next: (val) => console.log(`defer: ${val}`),
-        error: (e) => console.log(e),
-        complete: () => console.log("Tamamlandı.")
-      })
-    })
-
-
   }
-
-
 }
+
+
 
 
 
