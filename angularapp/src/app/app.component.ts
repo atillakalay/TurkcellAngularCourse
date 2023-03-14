@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
+import { ExampleService } from './example.service';
 
 @Component({
   selector: 'app-root',
@@ -12,17 +12,11 @@ export class AppComponent implements OnInit {
 
 
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private example: ExampleService) { }
 
   ngOnInit(): void {
 
-    let myObserveble = new Observable<string>(data => {
-      data.next("Atilla")
-      data.next("Atilla")
-      data.complete()
-    })
-
-    myObserveble.subscribe({
+    this.example.myObserveble.subscribe({
       next(data) { console.log(data) },
       error(err) { console.log(err) },
       complete() { console.log("Data yayınlama sona erdi") }
