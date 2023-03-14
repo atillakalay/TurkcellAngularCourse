@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { ExampleService } from './example.service';
+import { of } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -12,17 +11,18 @@ export class AppComponent implements OnInit {
 
 
 
-  constructor(private route: ActivatedRoute, private example: ExampleService) { }
+
+  constructor() { }
 
   ngOnInit(): void {
+    let values= of('angular',2,[1,2,3],5.56)
 
-    this.example.myObserveble.subscribe({
-      next(data) { console.log(data) },
-      error(err) { console.log(err) },
-      complete() { console.log("Data yayınlama sona erdi") }
-
+    values.subscribe(x=>{
+      console.log(x)
     })
   }
+
+
 
 
 }
