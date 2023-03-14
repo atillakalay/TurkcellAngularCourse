@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { of } from 'rxjs';
+import { interval, of } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -15,14 +15,18 @@ export class AppComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    let values= of('angular',2,[1,2,3],5.56)
+    let values= interval(3000)
 
-    values.subscribe(x=>{
-      console.log(x)
-    })
+
+  values.subscribe({
+    next:(val)=>console.log(val),
+    error:(e)=>console.log(e),
+    complete:()=>console.log("Tamamlandı.")
+  })
+
+
+
   }
-
-
 
 
 }
