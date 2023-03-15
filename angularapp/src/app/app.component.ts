@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { defer, distinct, filter, find, first, from, fromEvent, interval, last, map, mapTo, mergeMap, of, range, single, skip, skipUntil, skipWhile, switchMap, take, takeWhile, timer } from 'rxjs';
+import { concat, concatMap, defer, delay, distinct, filter, find, first, from, fromEvent, interval, last, map, mapTo, mergeMap, of, range, single, skip, skipUntil, skipWhile, switchMap, take, takeWhile, timer } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -35,7 +35,7 @@ export class AppComponent implements OnInit {
     var stringArray = of("a", "b", "b", "c", "d")
     var numberArray = of(1, 2, 3, 4, 5)
 
-    stringArray.pipe(mergeMap(x => numberArray.pipe(map(y => x + y)))).subscribe(x => {
+    stringArray.pipe(concatMap(x => numberArray.pipe(delay(3000),map(y => x + y)))).subscribe(x => {
       console.log(x)
     })
 
