@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { defer, from, fromEvent, interval, of, range, timer } from 'rxjs';
+import { defer, first, from, fromEvent, interval, of, range, timer } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -13,22 +13,13 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
 
-    const map = new Map()
-    map.set(1, "Kitap1")
-    map.set(2, "Kitap2")
-    map.set(3, "Kitap3")
-    map.set(4, "Kitap4")
-    map.set(5, "Kitap5")
+    const myArray=from([5,7,9,10,12,14,20,33])
 
-
-    let ofObservable = from(map)
-
-    ofObservable.subscribe({
-      next: (val) => console.log(`From: ${val}`),
-      error: (e) => console.log(e),
-      complete: () => console.log("Tamamlandı.")
+    myArray.pipe(first(x=>x>15)).subscribe(x=>{
+      console.log(x)
     })
   }
+
 }
 
 
