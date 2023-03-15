@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { defer, distinct, filter, find, first, from, fromEvent, interval, last, of, range, single, skip, skipUntil, skipWhile, take, takeWhile, timer } from 'rxjs';
+import { defer, distinct, filter, find, first, from, fromEvent, interval, last, map, of, range, single, skip, skipUntil, skipWhile, take, takeWhile, timer } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -13,9 +13,13 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
 
-    const myArray=from([1,2,3,4,5,6,7,8,9,10])
+    const names=from([
+      {name:"Ahmet",surname:"Yıldırım",email:"ahmet@gmail.com"},
+      {name:"Mehmet",surname:"Şükran",email:"mehmet@gmail.com"},
+      {name:"Hasan",surname:"Yılmaz",email:"hasan@gmail.com"},
+  ])
 
-    myArray.pipe(takeWhile(x=>x<5)).subscribe(x=>{
+    names.pipe(map(x=>x.name)).subscribe(x=>{
       console.log(x)
     })
   }
