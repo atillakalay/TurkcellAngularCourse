@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { defer, distinct, filter, find, first, from, fromEvent, interval, last, map, mapTo, mergeMap, of, range, single, skip, skipUntil, skipWhile, take, takeWhile, timer } from 'rxjs';
+import { defer, distinct, filter, find, first, from, fromEvent, interval, last, map, mapTo, mergeMap, of, range, single, skip, skipUntil, skipWhile, switchMap, take, takeWhile, timer } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +12,15 @@ export class AppComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
+
+
+    const myClick = fromEvent(document, 'click')
+    myClick.pipe(switchMap(() => timer(3000))).subscribe(x => {
+      console.log(x)
+    })
+
+
 
 
     const click = fromEvent(document, 'click')
