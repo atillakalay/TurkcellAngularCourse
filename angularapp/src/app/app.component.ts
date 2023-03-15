@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
       {name:"Hasan",surname:"Yılmaz",email:"hasan@gmail.com"},
   ])
 
-    names.pipe(map(x=>x.name)).subscribe(x=>{
+    names.pipe(map(x=>`${x.name} ${x.surname} ${x.email}`)).subscribe(x=>{
       console.log(x)
     })
   }
