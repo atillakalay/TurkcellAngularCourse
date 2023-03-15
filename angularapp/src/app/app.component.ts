@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { defer, first, from, fromEvent, interval, of, range, timer } from 'rxjs';
+import { defer, find, first, from, fromEvent, interval, of, range, timer } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
 
     const myArray=from([5,7,9,10,12,14,20,33])
 
-    myArray.pipe(first(x=>x>15)).subscribe(x=>{
+    myArray.pipe(find(x=>x>15)).subscribe(x=>{
       console.log(x)
     })
   }
