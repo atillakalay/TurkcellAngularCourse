@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { concat, concatMap, defer, delay, distinct, filter, find, first, from, fromEvent, interval, last, map, mapTo, mergeMap, of, range, reduce, single, skip, skipUntil, skipWhile, switchMap, take, takeWhile, tap, timer, toArray } from 'rxjs';
+import { ajax } from 'rxjs/ajax';
+import { concat, concatMap, defer, delay, distinct, filter, find, first, from, fromEvent, interval, last, map, mapTo, mergeMap, of, range, reduce, retry, single, skip, skipUntil, skipWhile, switchMap, take, takeWhile, tap, timer, toArray } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -13,38 +14,10 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
 
-
-
-    const myClick = fromEvent(document, 'click')
-    myClick.pipe(switchMap(() => timer(3000))).subscribe(x => {
+    ajax.getJSON('https://jsonplaceholder.typicode.com/todos/1').pipe(retry(3)).subscribe(x=>{
       console.log(x)
     })
 
-
-
-
-    const click = fromEvent(document, 'click')
-    click.pipe(mapTo("Merhaba")).subscribe(x => { console.log(x) })
-
-    const names = from([
-      { name: "Ahmet", surname: "Yıldırım", email: "ahmet@gmail.com" },
-      { name: "Mehmet", surname: "Şükran", email: "mehmet@gmail.com" },
-      { name: "Hasan", surname: "Yılmaz", email: "hasan@gmail.com" },
-    ])
-
-    var stringArray = of("a", "b", "b", "c", "d")
-    var numberArray = of(1, 2, 3, 4, 5)
-
-    stringArray.pipe(concatMap(x => numberArray.pipe(delay(3000),map(y => x + y)))).subscribe(x => {
-      console.log(x)
-    })
-
-    stringArray.pipe(toArray()).subscribe(x=>console.log(x))
-    numberArray.pipe(tap(x=>console.log(`${x} datası geldi.`))).subscribe(x=>console.log(x))
-
-    names.pipe(mapTo("Sabit Değer")).subscribe(x => {
-      console.log(x)
-    })
   }
 
 }
