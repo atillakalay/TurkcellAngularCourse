@@ -4,8 +4,6 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { OrnekComponent } from './ornek/ornek.component';
-import { TokenInterceptor } from './interceptors/token.interceptor';
-import { CustomErrorInterceptor } from './interceptors/custom-error.interceptor';
 
 @NgModule({
   declarations: [
@@ -18,8 +16,7 @@ import { CustomErrorInterceptor } from './interceptors/custom-error.interceptor'
     HttpClientModule,
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: CustomErrorInterceptor, multi: true }
+
   ],
   bootstrap: [AppComponent]
 })
