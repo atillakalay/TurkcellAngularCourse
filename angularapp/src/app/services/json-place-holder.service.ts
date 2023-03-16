@@ -19,6 +19,6 @@ export class JsonPlaceHolderService {
     })
 
 
-    return this.http.get<Post>(`https://jsonplaceholder.typicode.com/posts/${id}`,{params:queryParams})
+    return this.http.get<Post>(`https://jsonplaceholder.typicode.com/posts/${id}`)
   }
 }
