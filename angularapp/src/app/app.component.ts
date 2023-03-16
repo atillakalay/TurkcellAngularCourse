@@ -10,6 +10,7 @@ import { JsonPlaceHolderService } from './services/json-place-holder.service';
 })
 export class AppComponent implements OnInit {
 
+  isLoadingShow: boolean = true
   postList: Post[] = []
   title = 'angularapp';
 
@@ -17,7 +18,11 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.josnPostPlaceHolderServise.getPostList().subscribe(x => this.postList = x)
+    this.josnPostPlaceHolderServise.getPostList().subscribe(x => {
+      this.postList = x
+      this.isLoadingShow = false
+
+    })
 
   }
 
