@@ -19,8 +19,8 @@ export class OrnekComponent {
 
     this.jsonPlaceHolderService.getPost(25252525).subscribe({
       next: (x) => this.post = x,
-      error:(err)=>console.log("Aradığınız data bulunamadı."),
-      complete:()=>console.log("İstek tamamlandı.")
+      error: (err: Error) => console.warn(`Hata: ${err}`),
+      complete: () => console.log("İstek tamamlandı.")
 
     })
 
