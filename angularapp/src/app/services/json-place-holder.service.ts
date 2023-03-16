@@ -14,8 +14,6 @@ export class JsonPlaceHolderService {
   }
 
   getPost(id: number) {
-    return this.http.get<Post>(`https://jsonplaceholder.typicode.com/posts/${id}`).pipe(catchError(err=>{
-      throw new Error("Data bulunamadı")
-    }))
+    return this.http.get<Post>(`https://jsonplaceholder.typicode.com/posts/${id}`,{observe:'response'})
   }
 }
