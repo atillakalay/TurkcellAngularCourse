@@ -13,12 +13,6 @@ export class JsonPlaceHolderService {
   }
 
   getPost(id: number) {
-
-    var queryParams=new HttpParams({
-      fromString:'name=Atilla&age=23'
-    })
-
-
     return this.http.get<Post>(`https://jsonplaceholder.typicode.com/posts/${id}`)
   }
 }
