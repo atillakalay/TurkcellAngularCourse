@@ -7,14 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+  user:any
   title = 'angularapp';
 
   constructor(private http:HttpClient) { }
 
   ngOnInit(): void {
 
-    this.http.get('https://jsonplaceholder.typicode.com/todos/1').subscribe(x=>{
-      console.log(x)
+    this.http.get<any>('https://jsonplaceholder.typicode.com/todos/1').subscribe(x=>{
+     this.user=x
     })
   }
 
