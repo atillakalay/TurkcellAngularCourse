@@ -6,11 +6,13 @@ import { Post } from '../models/post';
   providedIn: 'root'
 })
 export class JsonPlaceHolderService {
-  postList:Post[]=[]
+  constructor(private http: HttpClient) { }
 
-  constructor(private http:HttpClient) { }
-
-  getPostList(){
+  getPostList() {
     return this.http.get<Post[]>('https://jsonplaceholder.typicode.com/posts');
+  }
+
+  getPost(id: number) {
+    return this.http.get<Post>(`https://jsonplaceholder.typicode.com/posts/${id}`);
   }
 }
