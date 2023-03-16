@@ -1,6 +1,10 @@
 ANASAYFA
-<p>Id: {{user2?.id}}</p>
-<p>User Id: {{user2?.userId}}</p>
-<p>Title: {{user2?.title}}</p>
-<p>complated: {{user2?.completed}}</p>
+
+<div class="alert alert-info" *ngFor="let post of postList">
+  <p>Id: {{post.id}}</p>
+  <p>User Id: {{post.userId}}</p>
+  <p>Title: {{post.title}}</p>
+  <p>Body: {{post.body}}</p>
+</div>
+
 <router-outlet></router-outlet>
