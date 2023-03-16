@@ -18,7 +18,7 @@ export class OrnekComponent {
   ngOnInit(): void {
 
     this.jsonPlaceHolderService.getPost(2).subscribe({
-      next: (x) =>console.log(x.body) ,
+      next: (x) =>this.post=x ,
       error: (err: Error) => console.warn(`Hata: ${err}`),
       complete: () => console.log("İstek tamamlandı.")
 
