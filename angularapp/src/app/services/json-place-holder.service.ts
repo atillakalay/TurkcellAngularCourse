@@ -9,10 +9,10 @@ import { Post } from '../models/post';
 export class JsonPlaceHolderService {
   constructor(private http: HttpClient) { }
 
-  getPostList() {
+  getPostList(page: number, pageSize: number) {
 
 
-    return this.http.get<Post[]>('https://jsonplaceholder.typicode.com/posts').pipe(mergeMap(x=>from(x)),skip(0),take(5),toArray());
+    return this.http.get<Post[]>('https://jsonplaceholder.typicode.com/posts').pipe(mergeMap(x => from(x)), skip((page - 1) * pageSize), take(pageSize), toArray());
   }
 
   getPost(id: number) {

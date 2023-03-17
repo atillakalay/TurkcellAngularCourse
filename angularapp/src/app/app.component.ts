@@ -18,7 +18,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.josnPostPlaceHolderServise.getPostList().subscribe(x => {
+    this.josnPostPlaceHolderServise.getPostList(2,10).subscribe(x => {
       this.postList = x
       this.isLoadingShow = false
 
