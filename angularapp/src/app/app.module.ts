@@ -3,17 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
-import { OrnekComponent } from './ornek/ornek.component';
-import { SearchComponent } from './search/search.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { AComponent } from './shared/a/a.component';
-import { BComponent } from './shared/b/b.component';
-
+import { AComponent } from './pages/a/a.component';
+import { BComponent } from './pages/b/b.component';
 @NgModule({
   declarations: [
     AppComponent,
-    OrnekComponent,
-    SearchComponent,
     AComponent,
     BComponent,
   ],
@@ -21,7 +15,6 @@ import { BComponent } from './shared/b/b.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule,
   ],
   providers: [
 

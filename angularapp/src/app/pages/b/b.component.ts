@@ -8,16 +8,15 @@ import { JsonPlaceHolderService } from 'src/app/services/json-place-holder.servi
 })
 export class BComponent {
 
-  currency: string | undefined
-
-  constructor(private jsonPlaceHolder: JsonPlaceHolderService) {
+  constructor(private jsonPlaceHolderService: JsonPlaceHolderService) {
 
   }
 
   ngOnInit(): void {
-    this.jsonPlaceHolder.currencyObservable.subscribe(x => {
-      this.currency = x
+    this.jsonPlaceHolderService.getPostList(1, 10).subscribe(x => {
+      console.log(x)
     })
 
   }
+
 }
