@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { JsonPlaceHolderService } from 'src/app/services/json-place-holder.service';
 
 @Component({
@@ -8,15 +9,12 @@ import { JsonPlaceHolderService } from 'src/app/services/json-place-holder.servi
 })
 export class BComponent {
 
-  constructor(private jsonPlaceHolderService: JsonPlaceHolderService) {
+  constructor(private route:ActivatedRoute) {
 
   }
 
   ngOnInit(): void {
-    this.jsonPlaceHolderService.getPostList(1, 10).subscribe(x => {
-      console.log(x)
-    })
-
+    console.log(this.route.snapshot.data['postList'])
   }
 
 }
