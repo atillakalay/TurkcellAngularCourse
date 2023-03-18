@@ -1,28 +1,11 @@
-ANASAYFA
+<select [formControl]="selectCurrency" class="form form-control my-4 mx-4">
+  <option  *ngFor="let item of currencyList" value="{{ item }}">
+    {{ item }}
+  </option>
+</select>
 
-
-<app-search></app-search>
-
-
-<div *ngIf="isLoadingShow">
-  <div class="d-flex justify-content-center">
-    <div class="spinner-border" role="status">
-      <span class="visually-hidden">Loading...</span>
-    </div>
-  </div>
-</div>
-
-<hr>
-<app-ornek></app-ornek>
-<hr>
-
-
-<div class="alert alert-info" *ngFor="let post of postList">
-  <!-- <p>Id: {{post.id}}</p>
-  <p>User Id: {{post.userId}}</p>
-  <p>Title: {{post.title}}</p>
-  <p>Body: {{post.body}}</p> -->
-  {{post}}
-</div>
+<app-a></app-a>
+<hr />
+<app-b></app-b>
 
 <router-outlet></router-outlet>
