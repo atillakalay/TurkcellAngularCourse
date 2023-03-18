@@ -20,7 +20,7 @@ export class JsonPlaceHolderService {
   }
 
   getUserWithSearch(searchText: string) {
-    return this.http.get<any[]>('https://jsonplaceholder.typicode.com/users').pipe(mergeMap(x => from(x)), filter(x => x.name.toLowerCase().include(searchText.toLowerCase())), map(x => x.name))
+    return this.http.get<any[]>('https://jsonplaceholder.typicode.com/users').pipe(mergeMap(x => from(x)), filter(x => x.name.toLowerCase().includes(searchText.toLowerCase())), map(x =>  `${x.name} - ${x.email}`),toArray())
   }
 
 }

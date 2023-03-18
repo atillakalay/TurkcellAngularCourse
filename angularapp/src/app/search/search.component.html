@@ -1,6 +1,7 @@
 <div class="my-4 mx-4">
-  <input class="form form-control" type="text" [formControl]="search">
+  <input class="form form-control" type="text" [formControl]="search" />
 </div>
 
-
-
+<div *ngFor="let searchResult of searchResultList">
+  {{ searchResult }}
+</div>
