@@ -8,15 +8,27 @@ import { Post } from '../models/post';
 })
 export class JsonPlaceHolderService {
 
- public currencyObservable = new BehaviorSubject("Türk Lirası")
+  public currencyObservable = new BehaviorSubject("Türk Lirası")
 
+
+
+
+  constructor(private http: HttpClient) { }
+
+  create(createPost: Post) {
+    return this.http.post<Post>('https://jsonplaceholder.typicode.com/posts', createPost)
+  }
+
+  update(updatedPost:Post){
+    return this.http.put<Post>(`https://jsonplaceholder.typicode.com/posts/${updatedPost.id}`,updatedPost )
+  }
+  delete(deletedPost:Post){
+    return this.http.delete<any>(`https://jsonplaceholder.typicode.com/posts/${deletedPost.id}` )
+  }
 
   setCurrency(val: any) {
     this.currencyObservable.next(val)
   }
-
-
-  constructor(private http: HttpClient) { }
 
   getPostList(page: number, pageSize: number) {
 
